@@ -85,9 +85,14 @@ export const Button = styled.button`
   font-size: 15px;
   line-height: 26px;
   border-radius: 10px;
+
+  &:hover {
+    background: #77e2b3;
+    cursor: pointer;
+  }
   @media screen and (min-width: 1440px) {
     width: 460px;
-    font-size:17px;
+    font-size: 17px;
   }
 `;
 
@@ -102,6 +107,6 @@ export const Footer = styled.footer`
     color: #ff7979;
   }
   @media screen and (min-width: 1440px) {
-   font-size:13px;
+    font-size: 13px;
   }
 `;
