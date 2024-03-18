@@ -1,22 +1,27 @@
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
-import mobileImg from '../public/images/bg-intro-mobile.png'
-
+import mobileBg from "./../public/images/bg-intro-mobile.png";
 
 const Global = createGlobalStyle`
-   *{
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-  }
+    *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
 
-  body{
-   background: #FF7979;
-   height: 100vh;
-   background-image: url(${mobileImg});
-   background-size:cover;
-   font-family: 'Poppins';
-  }
-  
+    }
+
+    body{
+       background: #FF7979;
+        background-image: url(${mobileBg});
+        background-size: cover;
+        font-family: 'Poppins';
+        padding: 16px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `;
- export {Global}
+
+export { Global };
