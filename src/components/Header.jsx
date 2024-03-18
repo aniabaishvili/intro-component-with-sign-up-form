@@ -14,9 +14,7 @@ export default function Header() {
 }
 
 export const Headerstyle = styled.div`
-   width: 327px;
-
-
+  width: 327px;
 
   & h1 {
     font-size: 25px;
@@ -35,6 +33,22 @@ export const Headerstyle = styled.div`
     letter-spacing: 0px;
     text-align: center;
     color: #fff;
-    padding:10px;
+    padding: 10px;
   }
+  @media screen and (min-width: 1440px) {
+    h1 {
+      font-size: 45px;
+      text-align: start;
+      line-height:50px;
+    }
+    width:400px;
+    margin: auto;
+    
+    p{
+        font-size: 16px;
+        text-align: start;
+        line-height:30px;
+       
+    }
+}
 `;

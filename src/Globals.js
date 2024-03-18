@@ -22,6 +22,7 @@ const Global = createGlobalStyle`
         justify-content: center;
         align-items: center;
     }
+    
 `;
 
 export { Global };

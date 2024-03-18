@@ -12,7 +12,10 @@ export default function SignUp() {
         <Input placeholder="Email Address" />
         <Input placeholder="Password" />
         <Button>CLAIM YOUR FREE TRIAL</Button>
-        <Footer>By clicking the button, you are agreeing to our <span>Terms and Services</span></Footer>
+        <Footer>
+          By clicking the button, you are agreeing to our{" "}
+          <span>Terms and Services</span>
+        </Footer>
       </SignForm>
     </SignStyles>
   );
@@ -30,6 +33,9 @@ const SignForm = styled.div`
   border-radius: 10px;
   row-gap: 10px;
   margin-top: 30px;
+  @media screen and (min-width: 1440px) {
+    width: 540px;
+  }
 `;
 
 const Price = styled.h2`
@@ -53,6 +59,9 @@ const Price = styled.h2`
     letter-spacing: 0.27px;
     color: #fff;
   }
+  @media screen and (min-width: 1440px) {
+    width: 540px;
+  }
 `;
 export const SignStyles = styled.div``;
 
@@ -60,6 +69,9 @@ export const Input = styled.input`
   width: 279px;
   padding: 20px;
   border: 1px solid #dedede;
+  @media screen and (min-width: 1440px) {
+    width: 460px;
+  }
 `;
 
 export const Button = styled.button`
@@ -73,17 +85,23 @@ export const Button = styled.button`
   font-size: 15px;
   line-height: 26px;
   border-radius: 10px;
+  @media screen and (min-width: 1440px) {
+    width: 460px;
+    font-size:17px;
+  }
 `;
 
 export const Footer = styled.footer`
-    font-size: 11px;
-    font-weight: 600;
-    line-height: 21px;
-    letter-spacing: 0px;
-    text-align: center;
-    color:#dedede;
-    & span {
-        color: #FF7979;
-    }
-
-`
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #dedede;
+  & span {
+    color: #ff7979;
+  }
+  @media screen and (min-width: 1440px) {
+   font-size:13px;
+  }
+`;
