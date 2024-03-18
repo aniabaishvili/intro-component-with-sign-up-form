@@ -37,11 +37,11 @@ export const Headerstyle = styled.div`
   }
   @media screen and (min-width: 1440px) {
     h1 {
-      font-size: 45px;
+      font-size: 50px;
       text-align: start;
       line-height:50px;
     }
-    width:400px;
+    width:500px;
     margin: auto;
     
     p{
