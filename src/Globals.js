@@ -1,14 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 import mobileBg from "./../public/images/bg-intro-mobile.png";
-import desktopBg from './../public/images/bg-intro-desktop.png'
+import desktopBg from "./../public/images/bg-intro-desktop.png";
 
 const Global = createGlobalStyle`
     *{
      margin: 0;
      padding: 0;
      box-sizing: border-box;
-
     }
 
     body{
@@ -17,7 +16,7 @@ const Global = createGlobalStyle`
         background-size: cover;
         font-family: 'Poppins';
         padding: 16px;
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
