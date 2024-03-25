@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 import mobileBg from "./../public/images/bg-intro-mobile.png";
+import desktopBg from './../public/images/bg-intro-desktop.png'
 
 const Global = createGlobalStyle`
     *{
@@ -21,6 +22,10 @@ const Global = createGlobalStyle`
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        @media screen and (min-width: 980px) {
+            background-image: url(${desktopBg});
+  }
     }
     
 `;

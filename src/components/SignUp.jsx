@@ -36,6 +36,9 @@ const SignForm = styled.div`
   @media screen and (min-width: 1440px) {
     width: 540px;
   }
+  @media screen and (min-width: 980px) {
+    width: 450px;
+  }
 `;
 
 const Price = styled.h2`
@@ -62,6 +65,9 @@ const Price = styled.h2`
   @media screen and (min-width: 1440px) {
     width: 540px;
   }
+  @media screen and (min-width: 980px) {
+    width: 450px;
+  }
 `;
 export const SignStyles = styled.div``;
 
@@ -71,6 +77,9 @@ export const Input = styled.input`
   border: 1px solid #dedede;
   @media screen and (min-width: 1440px) {
     width: 460px;
+  }
+  @media screen and (min-width: 980px) {
+    width: 380px;
   }
 `;
 
@@ -93,6 +102,9 @@ export const Button = styled.button`
   @media screen and (min-width: 1440px) {
     width: 460px;
     font-size: 17px;
+  }
+  @media screen and (min-width: 980px) {
+    width: 380px;
   }
 `;
 

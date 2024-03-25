@@ -23,4 +23,9 @@ const Maincontainer = styled.div`
     flex-direction: row;
     column-gap: 70px;
   }
+  @media screen and (min-width: 980px) {
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+  }
 `;

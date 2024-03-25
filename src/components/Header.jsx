@@ -51,4 +51,20 @@ export const Headerstyle = styled.div`
        
     }
 }
+
+@media screen and (min-width:980px){
+    h1{
+        font-size:40px;
+        text-align:start;
+
+    }
+
+    p{
+        font-size:14px;
+        text-align: start;
+
+    }
+    width:400px;
+    margin:auto;
+}
 `;
