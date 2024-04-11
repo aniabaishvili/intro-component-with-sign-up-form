@@ -1,19 +1,27 @@
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
+import { useState } from "react";
 
 export default function SignUp() {
+  const [firstName,setFirstname] = useState("")
+  const [firstNameError, setFirstNameError] = useState(false);
+  const handleSubmit = () => {
+     if(!firstName){
+      setFirstNameError (true)
+     }
+  }
   return (
     <SignStyles>
       <Price>
         Try it free 7 days <span>then $20/mo. thereafter</span>
       </Price>
       <SignForm>
-        <Input placeholder="First name" />
+        <Input placeholder="First name" onChange={(event) => setFirstname(event.target.value)} error={firstNameError} />
         <Input placeholder="Last name" />
         <Input placeholder="Email Address" />
         <Input placeholder="Password" />
-        <Button>CLAIM YOUR FREE TRIAL</Button>
+        <Button onClick={handleSubmit}>CLAIM YOUR FREE TRIAL</Button>
         <Footer>
-          By clicking the button, you are agreeing to our{" "}
+          By clicking the button, you are agreeing to our
           <span>Terms and Services</span>
         </Footer>
       </SignForm>
@@ -74,7 +82,7 @@ export const SignStyles = styled.div``;
 export const Input = styled.input`
   width: 279px;
   padding: 20px;
-  border: 1px solid #dedede;
+  border: ${props => props.error ? '1px solid red' : "1px solid white"};
   @media screen and (min-width: 1440px) {
     width: 460px;
   }
