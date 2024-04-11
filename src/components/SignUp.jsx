@@ -4,11 +4,19 @@ import { useState } from "react";
 export default function SignUp() {
   const [firstName,setFirstname] = useState("")
   const [firstNameError, setFirstNameError] = useState(false);
+  const [lastName, setLastName] = useState("")
+  const [lastNameError, setLastNameError] = useState(false);
   const handleSubmit = () => {
      if(!firstName){
       setFirstNameError (true)
      }
+     if(!lastName){
+      setLastNameError(true)
+     }
   }
+ 
+
+  
   return (
     <SignStyles>
       <Price>
@@ -16,7 +24,7 @@ export default function SignUp() {
       </Price>
       <SignForm>
         <Input placeholder="First name" onChange={(event) => setFirstname(event.target.value)} error={firstNameError} />
-        <Input placeholder="Last name" />
+        <Input placeholder="Last name" onChange={(event) => setLastName(event.target.value)} error={lastNameError} />
         <Input placeholder="Email Address" />
         <Input placeholder="Password" />
         <Button onClick={handleSubmit}>CLAIM YOUR FREE TRIAL</Button>
@@ -28,6 +36,9 @@ export default function SignUp() {
     </SignStyles>
   );
 }
+const ErrorMessage = styled.div`
+  color: red;
+`;
 
 const SignForm = styled.div`
   background-color: #fff;
