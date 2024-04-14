@@ -6,6 +6,11 @@ export default function SignUp() {
   const [firstNameError, setFirstNameError] = useState(false);
   const [lastName, setLastName] = useState("")
   const [lastNameError, setLastNameError] = useState(false);
+  const [email,setEmail] = useState("")
+  
+  const [emailError, setEmailError] = useState(false);
+  const [errorMessage,setErrorMessage] = useState("")
+
   const handleSubmit = () => {
      if(!firstName){
       setFirstNameError (true)
@@ -13,10 +18,20 @@ export default function SignUp() {
      if(!lastName){
       setLastNameError(true)
      }
+     if(!email){
+      setEmailError(true)
+     }
+     if (email && !validateEmail(email)) {
+      setEmailError(true);
+    }
+
   }
  
 
-  
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
   return (
     <SignStyles>
       <Price>
@@ -25,8 +40,8 @@ export default function SignUp() {
       <SignForm>
         <Input placeholder="First name" onChange={(event) => setFirstname(event.target.value)} error={firstNameError} />
         <Input placeholder="Last name" onChange={(event) => setLastName(event.target.value)} error={lastNameError} />
-        <Input placeholder="Email Address" />
-        <Input placeholder="Password" />
+        <Input placeholder="Email Address" onChange={(event) => setEmailError(event.target.value)} error={emailError}/>
+        <Input placeholder="Password"/>
         <Button onClick={handleSubmit}>CLAIM YOUR FREE TRIAL</Button>
         <Footer>
           By clicking the button, you are agreeing to our
@@ -36,9 +51,7 @@ export default function SignUp() {
     </SignStyles>
   );
 }
-const ErrorMessage = styled.div`
-  color: red;
-`;
+
 
 const SignForm = styled.div`
   background-color: #fff;
