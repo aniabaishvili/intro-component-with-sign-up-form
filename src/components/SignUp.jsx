@@ -7,9 +7,10 @@ export default function SignUp() {
   const [lastName, setLastName] = useState("")
   const [lastNameError, setLastNameError] = useState(false);
   const [email,setEmail] = useState("")
-  
   const [emailError, setEmailError] = useState(false);
   const [errorMessage,setErrorMessage] = useState("")
+  const [password,setPassword] = useState("")
+  const [passwordError,setPasswordError] = useState(false);
 
   const handleSubmit = () => {
      if(!firstName){
@@ -23,6 +24,9 @@ export default function SignUp() {
      }
      if (email && !validateEmail(email)) {
       setEmailError(true);
+    }
+    if (!password) {
+      setPasswordError(true);
     }
 
   }
@@ -41,7 +45,8 @@ export default function SignUp() {
         <Input placeholder="First name" onChange={(event) => setFirstname(event.target.value)} error={firstNameError} />
         <Input placeholder="Last name" onChange={(event) => setLastName(event.target.value)} error={lastNameError} />
         <Input placeholder="Email Address" onChange={(event) => setEmailError(event.target.value)} error={emailError}/>
-        <Input placeholder="Password"/>
+        <Input placeholder="Password" onChange={(event) => setPasswordError(event.target.value)} error={passwordError}/>
+        <p></p>
         <Button onClick={handleSubmit}>CLAIM YOUR FREE TRIAL</Button>
         <Footer>
           By clicking the button, you are agreeing to our
