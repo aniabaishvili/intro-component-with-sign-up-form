@@ -1,5 +1,6 @@
 import styled, { useTheme } from "styled-components";
 import { useState } from "react";
+import errorIcon from './../../public/images/icon-error.svg'
 
 export default function SignUp() {
   const [firstName,setFirstname] = useState("")
@@ -27,6 +28,7 @@ export default function SignUp() {
     }
     if (!password) {
       setPasswordError(true);
+      setErrorMessage("cant be empty")
     }
 
   }
@@ -45,11 +47,11 @@ export default function SignUp() {
         <Input placeholder="First name" onChange={(event) => setFirstname(event.target.value)} error={firstNameError} />
         <Input placeholder="Last name" onChange={(event) => setLastName(event.target.value)} error={lastNameError} />
         <Input placeholder="Email Address" onChange={(event) => setEmailError(event.target.value)} error={emailError}/>
-        <Input placeholder="Password" onChange={(event) => setPasswordError(event.target.value)} error={passwordError}/>
-        <p></p>
+        <Input placeholder="Password" onChange={(event) => setPasswordError(event.target.value)} error={passwordError} />
+        <p>{setErrorMessage}</p>
         <Button onClick={handleSubmit}>CLAIM YOUR FREE TRIAL</Button>
         <Footer>
-          By clicking the button, you are agreeing to our
+          By clicking the button, you are agreeing to our 
           <span>Terms and Services</span>
         </Footer>
       </SignForm>
