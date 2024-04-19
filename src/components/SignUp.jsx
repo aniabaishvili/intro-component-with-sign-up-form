@@ -54,16 +54,23 @@ export default function SignUp() {
           onChange={(event) => setLastName(event.target.value)}
           error={lastNameError}
         />
+        {lastNameError && (
+          <ErrorMessage> last Name cannot be empty</ErrorMessage>
+        )}
         <Input
           placeholder="Email Address"
           onChange={(event) => setEmailError(event.target.value)}
           error={emailError}
         />
+        {emailError && <ErrorMessage> email cannot be empty</ErrorMessage>}
         <Input
           placeholder="Password"
           onChange={(event) => setPasswordError(event.target.value)}
           error={passwordError}
         />
+        {passwordError && (
+          <ErrorMessage> password cannot be empty</ErrorMessage>
+        )}
         <Button onClick={handleSubmit}>CLAIM YOUR FREE TRIAL</Button>
         <Footer>
           By clicking the button, you are agreeing to our
