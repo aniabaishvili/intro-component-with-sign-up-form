@@ -1,38 +1,35 @@
 import styled, { useTheme } from "styled-components";
 import { useState } from "react";
-import errorIcon from './../../public/images/icon-error.svg'
+import errorIcon from "./../../public/images/icon-error.svg";
 
 export default function SignUp() {
-  const [firstName,setFirstname] = useState("")
+  const [firstName, setFirstname] = useState("");
   const [firstNameError, setFirstNameError] = useState(false);
-  const [lastName, setLastName] = useState("")
+  const [lastName, setLastName] = useState("");
   const [lastNameError, setLastNameError] = useState(false);
-  const [email,setEmail] = useState("")
+  const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
-  const [errorMessage,setErrorMessage] = useState("")
-  const [password,setPassword] = useState("")
-  const [passwordError,setPasswordError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState(false);
 
   const handleSubmit = () => {
-     if(!firstName){
-      setFirstNameError (true)
-     }
-     if(!lastName){
-      setLastNameError(true)
-     }
-     if(!email){
-      setEmailError(true)
-     }
-     if (email && !validateEmail(email)) {
+    if (!firstName) {
+      setFirstNameError(true);
+    }
+    if (!lastName) {
+      setLastNameError(true);
+    }
+    if (!email) {
+      setEmailError(true);
+    }
+    if (email && !validateEmail(email)) {
       setEmailError(true);
     }
     if (!password) {
       setPasswordError(true);
-      setErrorMessage("cant be empty")
     }
-
-  }
- 
+  };
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -44,21 +41,38 @@ export default function SignUp() {
         Try it free 7 days <span>then $20/mo. thereafter</span>
       </Price>
       <SignForm>
-        <Input placeholder="First name" onChange={(event) => setFirstname(event.target.value)} error={firstNameError} />
-        <Input placeholder="Last name" onChange={(event) => setLastName(event.target.value)} error={lastNameError} />
-        <Input placeholder="Email Address" onChange={(event) => setEmailError(event.target.value)} error={emailError}/>
-        <Input placeholder="Password" onChange={(event) => setPasswordError(event.target.value)} error={passwordError} />
-        <p>{setErrorMessage}</p>
+        <Input
+          placeholder="First name"
+          onChange={(event) => setFirstname(event.target.value)}
+          error={firstNameError}
+        />
+        {firstNameError && (
+          <ErrorMessage> First Name cannot be empty</ErrorMessage>
+        )}
+        <Input
+          placeholder="Last name"
+          onChange={(event) => setLastName(event.target.value)}
+          error={lastNameError}
+        />
+        <Input
+          placeholder="Email Address"
+          onChange={(event) => setEmailError(event.target.value)}
+          error={emailError}
+        />
+        <Input
+          placeholder="Password"
+          onChange={(event) => setPasswordError(event.target.value)}
+          error={passwordError}
+        />
         <Button onClick={handleSubmit}>CLAIM YOUR FREE TRIAL</Button>
         <Footer>
-          By clicking the button, you are agreeing to our 
+          By clicking the button, you are agreeing to our
           <span>Terms and Services</span>
         </Footer>
       </SignForm>
     </SignStyles>
   );
 }
-
 
 const SignForm = styled.div`
   background-color: #fff;
@@ -78,6 +92,11 @@ const SignForm = styled.div`
   @media screen and (min-width: 980px) {
     width: 450px;
   }
+`;
+const ErrorMessage = styled.p`
+  color: red;
+  font-size: 11px;
+  padding-left: 110px;
 `;
 
 const Price = styled.h2`
@@ -113,7 +132,7 @@ export const SignStyles = styled.div``;
 export const Input = styled.input`
   width: 279px;
   padding: 20px;
-  border: ${props => props.error ? '1px solid red' : "1px solid white"};
+  border: ${(props) => (props.error ? "1px solid red" : "1px solid white")};
   @media screen and (min-width: 1440px) {
     width: 460px;
   }
