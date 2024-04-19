@@ -104,7 +104,8 @@ const ErrorMessage = styled.p`
   color: red;
   font-size: 11px;
   padding-left: 110px;
-`;
+  font-style: italic;
+  `
 
 const Price = styled.h2`
   background: #5e54a4;
