@@ -44,7 +44,7 @@ export default function SignUp() {
         <Input
           placeholder="First name"
           onChange={(event) => setFirstname(event.target.value)}
-          error={firstNameError}
+          error={firstNameError} 
         />
         {firstNameError && (
           <ErrorMessage> First Name cannot be empty</ErrorMessage>
@@ -105,6 +105,9 @@ const ErrorMessage = styled.p`
   font-size: 11px;
   padding-left: 110px;
   font-style: italic;
+  @media screen and (min-width: 568px) {
+    padding-left:200px;
+  }
   `
 
 const Price = styled.h2`
