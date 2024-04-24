@@ -54,7 +54,7 @@ export default function SignUp() {
         <Input
           placeholder="Last name"
           onChange={(event) => {setLastName(event.target.value);
-            setFirstNameError(false);}}
+            setLastNameError(false);}}
           error={lastNameError}
         />
         {lastNameError && (
@@ -62,13 +62,15 @@ export default function SignUp() {
         )}
         <Input
           placeholder="Email Address"
-          onChange={(event) => setEmailError(event.target.value)}
+          onChange={(event) => {setEmailError(event.target.value);
+            setEmailError(false);}}
           error={emailError}
         />
         {emailError && <ErrorMessage> email cannot be empty</ErrorMessage>}
         <Input
           placeholder="Password"
-          onChange={(event) => setPasswordError(event.target.value)}
+          onChange={(event) => {setPasswordError(event.target.value);
+            setPasswordError(false);}}
           error={passwordError}
         />
         {passwordError && (
