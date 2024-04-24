@@ -53,7 +53,8 @@ export default function SignUp() {
         )}
         <Input
           placeholder="Last name"
-          onChange={(event) => setLastName(event.target.value)}
+          onChange={(event) => {setLastName(event.target.value);
+            setFirstNameError(false);}}
           error={lastNameError}
         />
         {lastNameError && (
