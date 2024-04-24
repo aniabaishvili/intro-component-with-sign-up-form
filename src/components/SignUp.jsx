@@ -29,6 +29,7 @@ export default function SignUp() {
     if (!password) {
       setPasswordError(true);
     }
+    
   };
 
   const validateEmail = (email) => {
@@ -43,8 +44,9 @@ export default function SignUp() {
       <SignForm>
         <Input
           placeholder="First name"
-          onChange={(event) => setFirstname(event.target.value)}
-          error={firstNameError} 
+          onChange={(event) => {setFirstname(event.target.value);
+            setFirstNameError(false);}}
+          error={firstNameError}
         />
         {firstNameError && (
           <ErrorMessage> First Name cannot be empty</ErrorMessage>
@@ -106,9 +108,9 @@ const ErrorMessage = styled.p`
   padding-left: 110px;
   font-style: italic;
   @media screen and (min-width: 568px) {
-    padding-left:200px;
+    padding-left: 200px;
   }
-  `
+`;
 
 const Price = styled.h2`
   background: #5e54a4;
