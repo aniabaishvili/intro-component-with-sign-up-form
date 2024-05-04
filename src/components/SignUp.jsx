@@ -25,11 +25,11 @@ export default function SignUp() {
     }
     if (email && !validateEmail(email)) {
       setEmailError(true);
+      setErrorMessage("Email address is invalid");
     }
     if (!password) {
       setPasswordError(true);
     }
-    
   };
 
   const validateEmail = (email) => {
@@ -42,40 +42,73 @@ export default function SignUp() {
         Try it free 7 days <span>then $20/mo. thereafter</span>
       </Price>
       <SignForm>
-        <Input
-          placeholder="First name"
-          onChange={(event) => {setFirstname(event.target.value);
-            setFirstNameError(false);}}
-          error={firstNameError}
-        />
-        {firstNameError && (
-          <ErrorMessage> First Name cannot be empty</ErrorMessage>
-        )}
+      <InputContainer>
+  <Input
+    placeholder="First name"
+    onChange={(event) => {
+      setFirstname(event.target.value);
+      setFirstNameError(false);
+    }}
+    error={firstNameError}
+  />
+  {firstNameError && (
+        <>
+        <ErrorIcon src={errorIcon} alt="Error Icon" />
+        <ErrorMessage>First Name cannot be empty</ErrorMessage>
+      </>
+
+  ) 
+  }
+  
+</InputContainer>
+        <InputContainer>
         <Input
           placeholder="Last name"
-          onChange={(event) => {setLastName(event.target.value);
-            setLastNameError(false);}}
+          onChange={(event) => {
+            setLastName(event.target.value);
+            setLastNameError(false);
+          }}
           error={lastNameError}
         />
         {lastNameError && (
-          <ErrorMessage> last Name cannot be empty</ErrorMessage>
+          <>
+          <ErrorIcon src={errorIcon} alt="Error Icon" />
+          <ErrorMessage>Last Name cannot be empty</ErrorMessage>
+        </>
         )}
+        </InputContainer>
+        <InputContainer>
         <Input
           placeholder="Email Address"
-          onChange={(event) => {setEmailError(event.target.value);
-            setEmailError(false);}}
+          onChange={(event) => {
+            setEmailError(event.target.value);
+            setEmailError(false);
+          }}
           error={emailError}
         />
-        {emailError && <ErrorMessage> email cannot be empty</ErrorMessage>}
+        {emailError && (
+          <>
+          <ErrorIcon src={errorIcon} alt="Error Icon" />
+          <ErrorMessage>Email cannot be empty</ErrorMessage>
+        </>
+        )}
+       </InputContainer>
+       <InputContainer>
         <Input
           placeholder="Password"
-          onChange={(event) => {setPasswordError(event.target.value);
-            setPasswordError(false);}}
+          onChange={(event) => {
+            setPasswordError(event.target.value);
+            setPasswordError(false);
+          }}
           error={passwordError}
         />
         {passwordError && (
-          <ErrorMessage> password cannot be empty</ErrorMessage>
+           <>
+           <ErrorIcon src={errorIcon} alt="Error Icon" />
+           <ErrorMessage>Password cannot be empty</ErrorMessage>
+         </>
         )}
+        </InputContainer>
         <Button onClick={handleSubmit}>CLAIM YOUR FREE TRIAL</Button>
         <Footer>
           By clicking the button, you are agreeing to our
@@ -85,6 +118,17 @@ export default function SignUp() {
     </SignStyles>
   );
 }
+
+const InputContainer = styled.div`
+  position: relative;
+`;
+
+const ErrorIcon = styled.img`
+  position: absolute;
+  top: 40%;
+  right: 10px;
+  transform: translateY(-50%);
+`;
 
 const SignForm = styled.div`
   background-color: #fff;
@@ -111,7 +155,7 @@ const ErrorMessage = styled.p`
   padding-left: 110px;
   font-style: italic;
   @media screen and (min-width: 568px) {
-    padding-left: 200px;
+    /* padding-left: 200px; */
   }
 `;
 
