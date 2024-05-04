@@ -42,72 +42,69 @@ export default function SignUp() {
         Try it free 7 days <span>then $20/mo. thereafter</span>
       </Price>
       <SignForm>
-      <InputContainer>
-  <Input
-    placeholder="First name"
-    onChange={(event) => {
-      setFirstname(event.target.value);
-      setFirstNameError(false);
-    }}
-    error={firstNameError}
-  />
-  {firstNameError && (
-        <>
-        <ErrorIcon src={errorIcon} alt="Error Icon" />
-        <ErrorMessage>First Name cannot be empty</ErrorMessage>
-      </>
-
-  ) 
-  }
-  
-</InputContainer>
         <InputContainer>
-        <Input
-          placeholder="Last name"
-          onChange={(event) => {
-            setLastName(event.target.value);
-            setLastNameError(false);
-          }}
-          error={lastNameError}
-        />
-        {lastNameError && (
-          <>
-          <ErrorIcon src={errorIcon} alt="Error Icon" />
-          <ErrorMessage>Last Name cannot be empty</ErrorMessage>
-        </>
-        )}
+          <Input
+            placeholder="First name"
+            onChange={(event) => {
+              setFirstname(event.target.value);
+              setFirstNameError(false);
+            }}
+            error={firstNameError}
+          />
+          {firstNameError && (
+            <>
+              <ErrorIcon src={errorIcon} alt="Error Icon" />
+              <ErrorMessage>First Name cannot be empty</ErrorMessage>
+            </>
+          )}
         </InputContainer>
         <InputContainer>
-        <Input
-          placeholder="Email Address"
-          onChange={(event) => {
-            setEmailError(event.target.value);
-            setEmailError(false);
-          }}
-          error={emailError}
-        />
-        {emailError && (
-          <>
-          <ErrorIcon src={errorIcon} alt="Error Icon" />
-          <ErrorMessage>Email cannot be empty</ErrorMessage>
-        </>
-        )}
-       </InputContainer>
-       <InputContainer>
-        <Input
-          placeholder="Password"
-          onChange={(event) => {
-            setPasswordError(event.target.value);
-            setPasswordError(false);
-          }}
-          error={passwordError}
-        />
-        {passwordError && (
-           <>
-           <ErrorIcon src={errorIcon} alt="Error Icon" />
-           <ErrorMessage>Password cannot be empty</ErrorMessage>
-         </>
-        )}
+          <Input
+            placeholder="Last name"
+            onChange={(event) => {
+              setLastName(event.target.value);
+              setLastNameError(false);
+            }}
+            error={lastNameError}
+          />
+          {lastNameError && (
+            <>
+              <ErrorIcon src={errorIcon} alt="Error Icon" />
+              <ErrorMessage>Last Name cannot be empty</ErrorMessage>
+            </>
+          )}
+        </InputContainer>
+        <InputContainer>
+          <Input
+            placeholder="Email Address"
+            onChange={(event) => {
+              setEmailError(event.target.value);
+              setEmailError(false);
+            }}
+            error={emailError}
+          />
+          {emailError && (
+            <>
+              <ErrorIcon src={errorIcon} alt="Error Icon" />
+              <ErrorMessage>Email cannot be empty</ErrorMessage>
+            </>
+          )}
+        </InputContainer>
+        <InputContainer>
+          <Input
+            placeholder="Password"
+            onChange={(event) => {
+              setPasswordError(event.target.value);
+              setPasswordError(false);
+            }}
+            error={passwordError}
+          />
+          {passwordError && (
+            <>
+              <ErrorIcon src={errorIcon} alt="Error Icon" />
+              <ErrorMessage>Password cannot be empty</ErrorMessage>
+            </>
+          )}
         </InputContainer>
         <Button onClick={handleSubmit}>CLAIM YOUR FREE TRIAL</Button>
         <Footer>
@@ -152,7 +149,8 @@ const SignForm = styled.div`
 const ErrorMessage = styled.p`
   color: red;
   font-size: 11px;
-  padding-left: 110px;
+  float: right;
+  padding-right:15px;
   font-style: italic;
   @media screen and (min-width: 568px) {
     /* padding-left: 200px; */
