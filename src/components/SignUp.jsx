@@ -123,7 +123,7 @@ const InputContainer = styled.div`
 const ErrorIcon = styled.img`
   position: absolute;
   top: 40%;
-  right: 10px;
+  right: 20px;
   transform: translateY(-50%);
 `;
 
